@@ -23,6 +23,17 @@ import { COACH_HISTORY, RECORD_PLAYERS } from "@/lib/history-data";
 import { HONOURS, IDENTITY, LEAGUE_CUP_PATH, PRESIDENTS, SOURCES, TIMELINE } from "@/lib/history-content";
 import { LEGENDS, PRESIDENT_PHOTOS, TOP_SCORERS } from "@/lib/history-people";
 import { TEAM_CREST } from "@/lib/hub-types";
+import capitalCupSquad from "@/assets/celebrations/capital-cup-squad.jpg.asset.json";
+import championsTrophy from "@/assets/celebrations/champions-trophy.jpg.asset.json";
+import playersCelebration from "@/assets/celebrations/players-celebration.jpg.asset.json";
+import ultrasTifo from "@/assets/celebrations/ultras-tifo.jpg.asset.json";
+
+const CUP_GALLERY = [
+  { src: championsTrophy.url, caption: "لحظة رفع كأس عاصمة مصر 2026" },
+  { src: playersCelebration.url, caption: "فرحة اللاعبين بعد صافرة النهاية" },
+  { src: ultrasTifo.url, caption: "تيفو جمهور المصري في المدرجات" },
+  { src: capitalCupSquad.url, caption: "فريق المصري بطل كأس عاصمة مصر 2026" },
+];
 
 
 export const Route = createFileRoute("/history")({
@@ -318,6 +329,28 @@ function LeagueCupPath() {
             <p className="text-lg font-black">{goalsAgainst}</p>
             <p className="text-[10px] text-muted-foreground">هدف عليه</p>
           </div>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <SectionHeading icon={<Trophy className="size-4" />} title="من ليلة التتويج" />
+        <div className="grid grid-cols-2 gap-2">
+          {CUP_GALLERY.map((photo) => (
+            <figure
+              key={photo.src}
+              className="overflow-hidden rounded-2xl border border-gold/30 bg-card"
+            >
+              <img
+                src={photo.src}
+                alt={photo.caption}
+                loading="lazy"
+                className="h-32 w-full object-cover"
+              />
+              <figcaption className="px-2 py-1.5 text-[10px] leading-snug text-muted-foreground">
+                {photo.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
 
