@@ -139,7 +139,7 @@ function RootComponent() {
           <div className="mx-auto flex max-w-3xl items-center gap-2.5 px-4 py-3">
             <Link to="/" className="flex items-center gap-2.5">
               <img src={TEAM_CREST} alt="شعار النادي المصري" className="size-8 object-contain" />
-              <span className="text-sm font-black tracking-tight">المصري بورسعيد</span>
+              <span className="text-sm font-black tracking-tight">ALMASRY SC</span>
             </Link>
           </div>
         </header>

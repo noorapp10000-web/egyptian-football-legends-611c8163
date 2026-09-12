@@ -285,7 +285,12 @@ export const PRESIDENTS: President[] = [
   { name: "كامل أبو علي", from: "2009", to: "2013" },
   { name: "ياسر يحيى", from: "2014", to: "يوليو 2015" },
   { name: "سمير حلبية", from: "23 يوليو 2015", to: "2022" },
-  { name: "كامل أبو علي", from: "2022", to: "حتى الآن" },
+  {
+    name: "كامل أبو علي",
+    from: "2022",
+    to: "حتى الآن",
+    note: "حقق المصري في عهده كأس عاصمة مصر",
+  },
 ];
 
 export type IdentityCard = { title: string; body: string };
